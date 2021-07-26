@@ -1,9 +1,13 @@
 {
     "extends": [
         "airbnb",
-        "prettier"
+        "prettier",
+        "plugin:@typescript-eslint/recommended"
     ],
-    "parser": "babel-eslint",
+    "plugins": [
+        "react"
+    ],
+    "parser": "@typescript-eslint/parser",
     "env": {
         "jest": true
     },
@@ -16,7 +20,9 @@
         "import/prefer-default-export": 0,
         "import/no-named-as-default": 0,
         "import/no-named-as-default-member": 0,
+        "no-param-reassign": 0,
         "react/prop-types": 0,
+        "no-use-before-define": "off",
         "react/destructuring-assignment": 0,
         "import/extensions": [
             "error",
