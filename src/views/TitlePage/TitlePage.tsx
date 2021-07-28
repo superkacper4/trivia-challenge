@@ -1,26 +1,52 @@
-import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import { RootState } from '../../redux/store'
-import { setDifficulty } from '../../redux/titleSlice'
+import React, { useState, SetStateAction } from 'react'
+import { useDispatch } from 'react-redux'
+import { api } from '../../Router/routes'
+import { setQuestions } from '../../redux/questionsSlice'
+// import { getQuestions } from './TitlePage.api'
 
 const TitlePage = () => {
-    const { difficulty } = useSelector((state: RootState) => state.title);
+    const [difficultyLocal, setDifficultyLocal] = useState('')
+    const [amountLocal, setAmountLocal] = useState('')
     const dispatch = useDispatch();
 
-    const handleClick = () => {
-        dispatch(setDifficulty('xd'))
-        console.log(difficulty)
+    const getQuestions = (amount: string, difficulty: string) => {
+        fetch(`${api}amount=${amount}&difficulty=${difficulty}&type=boolean`, {
+            method: 'GET', // or 'PUT'
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data)
+                dispatch(setQuestions(data.results))
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                return error
+            });
     }
+
+    const handleSelect = (e: any): void => {
+        setDifficultyLocal(e.target.value)
+    }
+
+
+    const handleSubmit = () => {
+        getQuestions(amountLocal, difficultyLocal)
+    }
+
 
     return (
         <div>
             <h1 >xd</h1>
-            <select>
-                <option>easy</option>
-                <option>hard</option>
+            <select value={difficultyLocal} onChange={(e) => handleSelect(e)}>
+                <option value="" selected disabled>-----</option>
+                <option value="easy">easy</option>
+                <option value="hard">hard</option>
             </select>
-            <input type='number' placeholder='give number' />
-            <button type='button' onClick={handleClick}>xd</button>
+            <input type='number' placeholder='give number' value={amountLocal} onChange={(e) => setAmountLocal(e.target.value)} />
+            <button type='submit' onClick={handleSubmit}>xd</button>
         </div>
     )
 }

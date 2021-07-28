@@ -1,5 +1,7 @@
 import { TitlePage } from '../views'
 
+export const api = 'https://opentdb.com/api.php?'
+
 export const paths = {
     TITLE: '/',
     QUIZ: '/quiz',

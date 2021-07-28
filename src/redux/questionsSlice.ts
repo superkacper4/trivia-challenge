@@ -24,13 +24,13 @@ export const counterSlice = createSlice({
     name: 'counter',
     initialState,
     reducers: {
-        asign: (state, action) => {
-            state.questions.push(action.payload)
+        setQuestions: (state, action) => {
+            state.questions = action.payload
         },
     },
 })
 
 // Action creators are generated for each case reducer function
-export const { asign } = counterSlice.actions
+export const { setQuestions } = counterSlice.actions
 
 export default counterSlice.reducer
