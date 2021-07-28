@@ -1,6 +1,7 @@
 import React, { useState, SetStateAction } from 'react'
 import { useDispatch } from 'react-redux'
-import { api } from '../../Router/routes'
+import { useHistory } from "react-router-dom";
+import { api, paths } from '../../Router/routes'
 import { setQuestions } from '../../redux/questionsSlice'
 // import { getQuestions } from './TitlePage.api'
 
@@ -8,6 +9,7 @@ const TitlePage = () => {
     const [difficultyLocal, setDifficultyLocal] = useState('')
     const [amountLocal, setAmountLocal] = useState('')
     const dispatch = useDispatch();
+    const history = useHistory();
 
     const getQuestions = (amount: string, difficulty: string) => {
         fetch(`${api}amount=${amount}&difficulty=${difficulty}&type=boolean`, {
@@ -34,6 +36,7 @@ const TitlePage = () => {
 
     const handleSubmit = () => {
         getQuestions(amountLocal, difficultyLocal)
+        history.push('/quiz')
     }
 
 

@@ -1,4 +1,4 @@
-import { TitlePage } from '../views'
+import { TitlePage, QuizPage } from '../views'
 
 export const api = 'https://opentdb.com/api.php?'
 
@@ -12,6 +12,11 @@ export default [
     {
         path: paths.TITLE,
         component: TitlePage,
+        exact: true
+    },
+    {
+        path: paths.QUIZ,
+        component: QuizPage,
         exact: true
     },
 ]
