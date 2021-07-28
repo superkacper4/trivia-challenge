@@ -2,13 +2,13 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 export interface titleState {
     difficulty: string;
-    ammount: number;
+    amount: string;
 }
 
 
 const initialState: titleState = {
     difficulty: 'easy',
-    ammount: 0,
+    amount: '0',
 }
 
 export const titleSlice = createSlice({
@@ -18,13 +18,13 @@ export const titleSlice = createSlice({
         setDifficulty: (state, action: PayloadAction<string>) => {
             state.difficulty = action.payload
         },
-        setAmmount: (state, action: PayloadAction<number>) => {
-            state.ammount = action.payload
+        setAmount: (state, action: PayloadAction<string>) => {
+            state.amount = action.payload
         },
     },
 })
 
 // Action creators are generated for each case reducer function
-export const { setAmmount, setDifficulty } = titleSlice.actions
+export const { setAmount, setDifficulty } = titleSlice.actions
 
 export default titleSlice.reducer

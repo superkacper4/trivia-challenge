@@ -1,8 +1,9 @@
-import React, { useState, SetStateAction } from 'react'
+import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useHistory } from "react-router-dom";
-import { api, paths } from '../../Router/routes'
+import { api } from '../../Router/routes'
 import { setQuestions } from '../../redux/questionsSlice'
+import { setAmount } from '../../redux/titleSlice';
 // import { getQuestions } from './TitlePage.api'
 
 const TitlePage = () => {
@@ -36,6 +37,8 @@ const TitlePage = () => {
 
     const handleSubmit = () => {
         getQuestions(amountLocal, difficultyLocal)
+        dispatch(setAmount(amountLocal))
+
         history.push('/quiz')
     }
 
