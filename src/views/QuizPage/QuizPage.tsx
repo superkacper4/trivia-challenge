@@ -1,23 +1,27 @@
 import React, { useState } from 'react'
 import { useHistory } from "react-router-dom";
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { setAnswers } from '../../redux/quizSlice';
 import { RootState } from '../../redux/store'
 
 const QuizPage = () => {
     const [numberQuestion, setNumberQuestion] = useState(0)
-    const [answers, setAnswers] = useState<string[]>([])
+    const [answersLocal, setAnswersLocal] = useState<string[]>([])
     const { questions } = useSelector((state: RootState) => state.questions);
     const { amount } = useSelector((state: RootState) => state.title);
     const history = useHistory()
+    const dispatch = useDispatch();
+
 
 
     const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
         const newVal: string = e.currentTarget.value
-        setAnswers([...answers, newVal])
+        setAnswersLocal([...answersLocal, newVal])
         setNumberQuestion(numberQuestion + 1)
 
         if (numberQuestion + 1 >= Number(amount)) {
             history.push('/results')
+            dispatch(setAnswers(answersLocal))
         }
     }
 

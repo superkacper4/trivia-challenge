@@ -1,9 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit'
 import titleReducer from './titleSlice'
+import quizReducer from './quizSlice'
 import questionsReducer from './questionsSlice'
 
 export const store = configureStore({
-    reducer: { title: titleReducer, questions: questionsReducer },
+    reducer: { title: titleReducer, questions: questionsReducer, quiz: quizReducer },
 })
 
 // Infer the `RootState` and `AppDispatch` types from the store itself

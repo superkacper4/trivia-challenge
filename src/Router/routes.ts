@@ -1,11 +1,11 @@
-import { TitlePage, QuizPage } from '../views'
+import { TitlePage, QuizPage, ResultsPage } from '../views'
 
 export const api = 'https://opentdb.com/api.php?'
 
 export const paths = {
     TITLE: '/',
     QUIZ: '/quiz',
-    RESULT: '/result',
+    RESULTS: '/results',
 }
 
 export default [
@@ -17,6 +17,11 @@ export default [
     {
         path: paths.QUIZ,
         component: QuizPage,
+        exact: true
+    },
+    {
+        path: paths.RESULTS,
+        component: ResultsPage,
         exact: true
     },
 ]
