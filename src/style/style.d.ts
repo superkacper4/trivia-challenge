@@ -9,6 +9,7 @@ declare module 'styled-components' {
                 m: string;
                 button: string;
                 question: string;
+                currentQuestion: string;
                 questionOverview: string;
                 level: string;
                 topic: string;
@@ -19,6 +20,7 @@ declare module 'styled-components' {
                 m: string;
                 button: string;
                 question: string;
+                currentQuestion: string;
                 questionOverview: string;
                 level: string;
                 topic: string;
@@ -32,6 +34,7 @@ declare module 'styled-components' {
             fourth: string;
             fivth: string;
             sixth: string;
+            seventh: string;
             white: string;
         };
 

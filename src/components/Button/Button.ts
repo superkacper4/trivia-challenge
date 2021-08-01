@@ -6,11 +6,18 @@ const Button = styled.button`
     text-transform: uppercase;
     background-image: linear-gradient(to right, ${({ theme }) => theme.colors.third}, ${({ theme }) => theme.colors.fourth});
     font-size: ${({ theme }) => theme.fontSizes.mobile.button};
-    padding: 2vh;
+    padding: 3vh;
+    margin-bottom: 2vh;
     border-radius: 14px;
     box-shadow: 0px 5px 0px 0px ${({ theme }) => theme.colors.sixth};
     border: none;
 
+
+    @media (${({ theme }) => theme.breakPoints.desktop}){
+        width: 60%;
+        font-size: ${({ theme }) => theme.fontSizes.desktop.button};
+
+    }
 `;
 
 export default Button

@@ -33,6 +33,10 @@ const StyledH1 = styled.h1`
     font-size: ${({ theme }) => theme.fontSizes.mobile.h1};
     margin: 0;
     padding: 0;
+
+    @media (${({ theme }) => theme.breakPoints.desktop}){
+        font-size: ${({ theme }) => theme.fontSizes.desktop.h1};
+    }
 `;
 
 const StyledForm = styled.form`
@@ -79,8 +83,13 @@ const styles = css`
     border: 1px solid ${({ theme }) => theme.colors.white};
     border-radius: 10px;
     color: ${({ theme }) => theme.colors.white};
-    padding: 10px;
+    padding: 2vh;
     margin: 0 0 10px;
+
+    @media (${({ theme }) => theme.breakPoints.desktop}){
+        font-size: ${({ theme }) => theme.fontSizes.desktop.m};
+    }
+
 `;
 
 const StyledInput = styled.input`

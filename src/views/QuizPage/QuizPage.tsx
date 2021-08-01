@@ -3,6 +3,8 @@ import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux'
 import { setAnswers } from '../../redux/quizSlice';
 import { RootState } from '../../redux/store'
+import { StyledQuizPage, StyledLevel, StyledQuestion, StyledDiv, StyledWrapper } from './QuizPage.css';
+import { Button, H2, ProgressBar } from '../../components';
 
 const QuizPage = () => {
     const [numberQuestion, setNumberQuestion] = useState(0)
@@ -11,8 +13,6 @@ const QuizPage = () => {
     const { amount } = useSelector((state: RootState) => state.title);
     const history = useHistory()
     const dispatch = useDispatch();
-
-
 
     const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
         const newVal: string = e.currentTarget.value
@@ -24,19 +24,26 @@ const QuizPage = () => {
             dispatch(setAnswers(answersLocal))
         }
     }
-
+    const createMarkup = () => ({ __html: questions[numberQuestion]?.question })
 
     return (
-        <div>
-            <h1>quiz</h1>
+        <StyledQuizPage>
+            <StyledWrapper>
+                <StyledDiv>
+                    <H2>{questions[numberQuestion]?.category}</H2>
+                    <StyledLevel>level 1</StyledLevel>
+                </StyledDiv>
 
-            {/* {questions.map((question) => <div key={question.question}>{question.question}</div>)} */}
-            {questions[numberQuestion]?.question}
+                <ProgressBar currentQuestion={numberQuestion + 1} amount={Number(amount)} />
 
+                <StyledQuestion dangerouslySetInnerHTML={createMarkup()} />
 
-            <button type='button' value='True' onClick={(e) => handleClick(e)}> prawda </button>
-            <button type='button' value='False' onClick={(e) => handleClick(e)}> falsz </button>
-        </div>
+                <StyledDiv>
+                    <Button type='button' value='True' onClick={(e) => handleClick(e)}> True </Button>
+                    <Button type='button' value='False' onClick={(e) => handleClick(e)}> False </Button>
+                </StyledDiv>
+            </StyledWrapper>
+        </StyledQuizPage>
     )
 }
 

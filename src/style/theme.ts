@@ -7,6 +7,7 @@ const theme: DefaultTheme = {
             m: '18px',
             button: '21px',
             question: '31px',
+            currentQuestion: '20px',
             questionOverview: '16px',
             level: '28px',
             topic: '81px',
@@ -17,6 +18,7 @@ const theme: DefaultTheme = {
             m: '13px',
             button: '15px',
             question: '25px',
+            currentQuestion: '20px',
             questionOverview: '12px',
             level: '13px',
             topic: '31px',
@@ -30,6 +32,7 @@ const theme: DefaultTheme = {
         fourth: '#FF6065',
         fivth: '#FF6065',
         sixth: '#C65252',
+        seventh: '#DBDEFF',
         white: 'white',
     },
     breakPoints: {
