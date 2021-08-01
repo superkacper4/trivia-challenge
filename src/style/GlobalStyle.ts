@@ -6,6 +6,7 @@ const GlobalStyle = createGlobalStyle`
         overflow-x: hidden;
         padding: 0;
         margin: 0;
+        font-family: 'Quicksand', sans-serif;
         /* height: 100vh; */
     }
     * {

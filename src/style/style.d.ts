@@ -31,7 +31,15 @@ declare module 'styled-components' {
             third: string;
             fourth: string;
             fivth: string;
+            sixth: string;
             white: string;
         };
+
+        breakPoints: {
+            phone: string;
+            tablet: string;
+            desktop: string;
+            bigDesktop: string;
+        }
     }
 }

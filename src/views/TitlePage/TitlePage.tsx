@@ -4,6 +4,9 @@ import { useHistory } from "react-router-dom";
 import { api } from '../../Router/routes'
 import { setQuestions } from '../../redux/questionsSlice'
 import { setAmount } from '../../redux/titleSlice';
+import { Button } from '../../components';
+import { StyledTitlePage, StyledLogo, StyledH1, StyledInput, StyledOption, StyledSelect, StyledWelcomeDiv, StyledLabel, StyledForm, StyledSpan } from './TitlePage.css';
+import logo from '../../assets/logo.svg'
 // import { getQuestions } from './TitlePage.api'
 
 const TitlePage = () => {
@@ -44,16 +47,29 @@ const TitlePage = () => {
 
 
     return (
-        <div>
-            <h1 >xd</h1>
-            <select value={difficultyLocal} onChange={(e) => handleSelect(e)}>
-                <option value="" selected disabled>-----</option>
-                <option value="easy">easy</option>
-                <option value="hard">hard</option>
-            </select>
-            <input type='number' placeholder='give number' value={amountLocal} onChange={(e) => setAmountLocal(e.target.value)} />
-            <button type='submit' onClick={handleSubmit}>xd</button>
-        </div>
+        <StyledTitlePage>
+            <StyledWelcomeDiv>
+                <StyledH1>Welcome to the</StyledH1>
+                <StyledLogo src={logo} alt='Logo' />
+            </StyledWelcomeDiv>
+            <StyledForm onSubmit={handleSubmit}>
+                <StyledSpan>
+                    <StyledSpan>
+                        <StyledLabel>Difficulty</StyledLabel>
+                        <StyledSelect value={difficultyLocal} onChange={(e) => handleSelect(e)}>
+                            <StyledOption value="" selected disabled>-----</StyledOption>
+                            <StyledOption value="easy">easy</StyledOption>
+                            <StyledOption value="hard">hard</StyledOption>
+                        </StyledSelect>
+                    </StyledSpan>
+                    <StyledSpan>
+                        <StyledLabel>Amount</StyledLabel>
+                        <StyledInput type='number' placeholder='give number' value={amountLocal} onChange={(e) => setAmountLocal(e.target.value)} />
+                    </StyledSpan>
+                </StyledSpan>
+                <Button type='submit'>next</Button>
+            </StyledForm>
+        </StyledTitlePage>
     )
 }
 

@@ -29,7 +29,14 @@ const theme: DefaultTheme = {
         third: '#FFA67A',
         fourth: '#FF6065',
         fivth: '#FF6065',
+        sixth: '#C65252',
         white: 'white',
+    },
+    breakPoints: {
+        phone: 'min-width:425px',
+        tablet: 'min-width:768px',
+        desktop: 'min-width:1024px',
+        bigDesktop: 'min-width:1440px',
     }
 };
 
