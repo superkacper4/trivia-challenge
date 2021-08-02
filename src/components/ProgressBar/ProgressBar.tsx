@@ -1,5 +1,6 @@
 import React from 'react'
-import { StyledWrapper, StyledProgress, StyledProgressBar, StyledP, StyledSpan } from './ProgressBar.css'
+import QuestionCounter from '../QuestionCounter'
+import { StyledWrapper, StyledProgress, StyledProgressBar } from './ProgressBar.css'
 
 interface types {
     currentQuestion: number;
@@ -9,7 +10,7 @@ interface types {
 
 const ProgressBar = ({ currentQuestion, amount }: types) => (
     <StyledWrapper>
-        <StyledP><StyledSpan>{currentQuestion}</StyledSpan>/{amount}</StyledP>
+        <QuestionCounter currentQuestion={currentQuestion} amount={amount} score={false} />
         <StyledProgressBar>
             <StyledProgress currentQuestion={currentQuestion} amount={amount} />
         </StyledProgressBar>

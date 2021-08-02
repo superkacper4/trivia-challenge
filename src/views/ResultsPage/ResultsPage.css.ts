@@ -6,6 +6,11 @@ const StyledResultsPage = styled.section`
     align-items: center;
     font-size: ${({ theme }) => theme.fontSizes.mobile.currentQuestion};
     color: ${({ theme }) => theme.colors.white};
+
+    @media (${({ theme }) => theme.breakPoints.desktop}){
+        font-size: ${({ theme }) => theme.fontSizes.desktop.currentQuestion};
+
+    }
 `
 
 const StyledWrapper = styled.div`
@@ -26,6 +31,7 @@ const StyledWrapper = styled.div`
 `;
 
 const StyledScore = styled.div`
+    width: 100%;
     padding: 4vh 2vw 0 2vw;
     display: flex;
     justify-content: center;
@@ -37,11 +43,16 @@ const StyledAvatar = styled.img`
     height: 10vw;
     background-color: ${({ theme }) => theme.colors.white};
     border-radius: 50%;
-    margin-right:5vw ;
+    margin-right:10px ;
 
     @media (${({ theme }) => theme.breakPoints.desktop}){
         width: 5vw;
         height: 5vw;
+    }
+
+    @media (${({ theme }) => theme.breakPoints.bigDesktop}){
+        width: 2.5vw;
+        height: 2.5vw;
     }
 `
 
@@ -59,6 +70,11 @@ const StyledStar = styled.img`
     @media (${({ theme }) => theme.breakPoints.desktop}){
         width: 3vw;
         height: 3vw;
+    }
+
+    @media (${({ theme }) => theme.breakPoints.bigDesktop}){
+        width: 1.5vw;
+        height: 1.5vw;
     }
 `;
 

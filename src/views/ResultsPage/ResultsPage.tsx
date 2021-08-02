@@ -5,7 +5,7 @@ import { setQuestions, setError, setLoading } from '../../redux/questionsSlice'
 import { setAmount } from '../../redux/titleSlice';
 import { RootState } from '../../redux/store'
 import { StyledResultsPage, StyledStarsDiv, StyledWrapper, StyledScore, StyledAvatar, StyledStar } from './ResultsPage.css'
-import { QuestionOverview, Button, Loader } from '../../components';
+import { QuestionOverview, Button, Loader, QuestionCounter } from '../../components';
 import star1Img from '../../assets/Star1.svg'
 import star0Img from '../../assets/Star0.svg'
 import avatarImg from '../../assets/avatar.svg'
@@ -52,7 +52,7 @@ const ResultsPage = () => {
             <Loader isLoading={isLoadingLocal} />
             <StyledWrapper>
                 <StyledScore>
-                    <StyledAvatar src={avatarImg} alt='avatar' /> You scored: {score}/{answers?.length + 1}
+                    <StyledAvatar src={avatarImg} alt='avatar' /> You scored:  <QuestionCounter currentQuestion={score} amount={answers?.length + 1} score />
                 </StyledScore>
                 <StyledStarsDiv>
                     {questions?.map((question, i) => {

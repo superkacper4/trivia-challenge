@@ -98,6 +98,8 @@ const styles = css`
     @media (${({ theme }) => theme.breakPoints.desktop}){
         font-size: ${({ theme }) => theme.fontSizes.desktop.m};
         width: 60%;
+        cursor: pointer;
+
     }
 
 `;

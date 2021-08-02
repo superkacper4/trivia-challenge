@@ -25,15 +25,6 @@ const StyledProgress = styled.div`
     background-color: ${({ theme }) => theme.colors.third};
 `
 
-const StyledP = styled.p`
-    width: 100%;
-    font-size: ${({ theme }) => theme.fontSizes.mobile.level};
-`;
 
-const StyledSpan = styled.span`
-    font-size: ${({ theme }) => theme.fontSizes.mobile.currentQuestion};
-    color: ${({ theme }) => theme.colors.third};
-`;
-
-export { StyledWrapper, StyledProgress, StyledProgressBar, StyledP, StyledSpan }
+export { StyledWrapper, StyledProgress, StyledProgressBar }
 

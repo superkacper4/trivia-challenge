@@ -16,6 +16,11 @@ const StyledQuestionOverview = styled.div<{ isCorrect: boolean }>`
     align-items: center;
     font-size: ${({ theme }) => theme.fontSizes.mobile.questionOverview};
     color: black;
+
+    @media (${({ theme }) => theme.breakPoints.desktop}){
+        font-size: ${({ theme }) => theme.fontSizes.desktop.questionOverview};
+
+    }
 `;
 
 const StyledP = styled.p`

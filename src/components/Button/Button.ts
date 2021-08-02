@@ -16,7 +16,7 @@ const Button = styled.button`
     @media (${({ theme }) => theme.breakPoints.desktop}){
         width: 60%;
         font-size: ${({ theme }) => theme.fontSizes.desktop.button};
-
+        cursor: pointer;
     }
 `;
 
