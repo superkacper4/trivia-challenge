@@ -33,6 +33,7 @@ const theme: DefaultTheme = {
         fivth: '#FF6065',
         sixth: '#C65252',
         seventh: '#DBDEFF',
+        eighth: '#FFDBDB',
         white: 'white',
     },
     breakPoints: {

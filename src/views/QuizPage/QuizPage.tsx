@@ -4,12 +4,12 @@ import { useSelector, useDispatch } from 'react-redux'
 import { setAnswers } from '../../redux/quizSlice';
 import { RootState } from '../../redux/store'
 import { StyledQuizPage, StyledLevel, StyledQuestion, StyledDiv, StyledWrapper } from './QuizPage.css';
-import { Button, H2, ProgressBar } from '../../components';
+import { Button, H2, ProgressBar, Loader } from '../../components';
 
 const QuizPage = () => {
     const [numberQuestion, setNumberQuestion] = useState(0)
     const [answersLocal, setAnswersLocal] = useState<string[]>([])
-    const { questions } = useSelector((state: RootState) => state.questions);
+    const { questions, isLoading, isError } = useSelector((state: RootState) => state.questions);
     const { amount } = useSelector((state: RootState) => state.title);
     const history = useHistory()
     const dispatch = useDispatch();
@@ -28,6 +28,7 @@ const QuizPage = () => {
 
     return (
         <StyledQuizPage>
+            <Loader isLoading={isLoading} />
             <StyledWrapper>
                 <StyledDiv>
                     <H2>{questions[numberQuestion]?.category}</H2>

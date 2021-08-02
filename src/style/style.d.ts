@@ -35,6 +35,7 @@ declare module 'styled-components' {
             fivth: string;
             sixth: string;
             seventh: string;
+            eighth: string;
             white: string;
         };
 

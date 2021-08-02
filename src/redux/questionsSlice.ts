@@ -13,11 +13,15 @@ export interface CounterState {
 
 interface questionInterface {
     questions: CounterState[];
+    isLoading: boolean;
+    isError: boolean;
 }
 
 
 const initialState: questionInterface = {
-    questions: []
+    questions: [],
+    isLoading: false,
+    isError: false
 }
 
 export const counterSlice = createSlice({
@@ -27,10 +31,16 @@ export const counterSlice = createSlice({
         setQuestions: (state, action) => {
             state.questions = action.payload
         },
+        setLoading: (state, action) => {
+            state.isLoading = action.payload
+        },
+        setError: (state, action) => {
+            state.isError = action.payload
+        }
     },
 })
 
 // Action creators are generated for each case reducer function
-export const { setQuestions } = counterSlice.actions
+export const { setQuestions, setError, setLoading } = counterSlice.actions
 
 export default counterSlice.reducer

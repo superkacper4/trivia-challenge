@@ -37,14 +37,6 @@ const StyledWelcomeDiv = styled.div`
     align-items: center;
 `;
 
-const StyledLogo = styled.img`
-    width: 100%;
-    margin: 0;
-    padding: 0;
-
-
-`;
-
 const StyledH1 = styled.h1`
     font-size: ${({ theme }) => theme.fontSizes.mobile.h1};
     margin: 0;
@@ -124,4 +116,4 @@ const StyledSelect = styled.select`
     ${styles}
 `;
 
-export { StyledTitlePage, StyledLogo, StyledH1, StyledInput, StyledOption, StyledSelect, StyledWelcomeDiv, StyledLabel, StyledForm, StyledDiv, StyledWrapper, StyledIcon }
+export { StyledTitlePage, StyledH1, StyledInput, StyledOption, StyledSelect, StyledWelcomeDiv, StyledLabel, StyledForm, StyledDiv, StyledWrapper, StyledIcon }

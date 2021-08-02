@@ -1,18 +1,21 @@
 import React, { useState, useEffect } from 'react'
 import { useHistory } from "react-router-dom";
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { setQuestions, setError, setLoading } from '../../redux/questionsSlice'
+import { setAmount } from '../../redux/titleSlice';
 import { RootState } from '../../redux/store'
 import { StyledResultsPage, StyledStarsDiv, StyledWrapper, StyledScore, StyledAvatar, StyledStar } from './ResultsPage.css'
-import { QuestionOverview, Button } from '../../components';
+import { QuestionOverview, Button, Loader } from '../../components';
 import star1Img from '../../assets/Star1.svg'
 import star0Img from '../../assets/Star0.svg'
 import avatarImg from '../../assets/avatar.svg'
 
 const ResultsPage = () => {
     const [score, setScore] = useState<number>(0)
-
+    const [isLoadingLocal, setLoadingLocal] = useState(true)
     const { questions } = useSelector((state: RootState) => state.questions);
     const { answers } = useSelector((state: RootState) => state.quiz);
+    const dispatch = useDispatch();
     const history = useHistory();
 
     const countScore = () => {
@@ -25,13 +28,28 @@ const ResultsPage = () => {
         })
     }
 
+    const handlePlayAgain = () => {
+        history.push('/')
+        dispatch(setQuestions([]))
+        dispatch(setLoading(false))
+        dispatch(setError(false))
+        dispatch(setAmount('0'))
+    }
+
+    const handleLoader = () => {
+        setTimeout(() => {
+            setLoadingLocal(false)
+        }, 1000)
+    }
+
     useEffect(() => {
         countScore()
-
+        handleLoader()
     }, [])
 
     return (
         <StyledResultsPage>
+            <Loader isLoading={isLoadingLocal} />
             <StyledWrapper>
                 <StyledScore>
                     <StyledAvatar src={avatarImg} alt='avatar' /> You scored: {score}/{answers?.length + 1}
@@ -56,7 +74,7 @@ const ResultsPage = () => {
                     return (<QuestionOverview isCorrect={isCorrect} question={question.question} key={question.question} />)
                 })}
 
-                <Button type="button" onClick={() => history.push('/')}>play again</Button>
+                <Button type="button" onClick={handlePlayAgain} >play again</Button>
             </StyledWrapper>
         </StyledResultsPage>
     )
