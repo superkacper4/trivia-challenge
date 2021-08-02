@@ -7,7 +7,7 @@ const StyledQuizPage = styled.section`
 `;
 
 const StyledWrapper = styled.div`
-    width: 100%;
+    width: 80%;
     min-height: 100vh;
     color: ${({ theme }) => theme.colors.main};
     display: flex;
@@ -38,6 +38,7 @@ const StyledQuestion = styled.div`
 
     @media (${({ theme }) => theme.breakPoints.desktop}){
         font-size: ${({ theme }) => theme.fontSizes.desktop.question};
+        text-align: center;
     }
 `;
 

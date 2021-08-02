@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const Button = styled.button`
-    width: 80%;
+    width: 100%;
     color: ${({ theme }) => theme.colors.white};
     text-transform: uppercase;
     background-image: linear-gradient(to right, ${({ theme }) => theme.colors.third}, ${({ theme }) => theme.colors.fourth});

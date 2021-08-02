@@ -3,10 +3,29 @@ import styled, { css } from 'styled-components'
 const StyledTitlePage = styled.section`
     min-height: 100vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     color: ${({ theme }) => theme.colors.white};
+`;
+
+const StyledWrapper = styled.div`
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @media (${({ theme }) => theme.breakPoints.tablet}){
+    width: 70%;
+    }
+
+    @media (${({ theme }) => theme.breakPoints.desktop}){
+    width: 50%;
+    }
+
+    @media (${({ theme }) => theme.breakPoints.bigDesktop}){
+    width: 30%;
+    }
 `;
 
 const StyledWelcomeDiv = styled.div`
@@ -23,9 +42,6 @@ const StyledLogo = styled.img`
     margin: 0;
     padding: 0;
 
-    @media (${({ theme }) => theme.breakPoints.tablet}){
-    width: 70%;
-    }
 
 `;
 
@@ -47,21 +63,12 @@ const StyledForm = styled.form`
     justify-content: space-around;
     align-items: center;
 
-    @media (${({ theme }) => theme.breakPoints.tablet}){
-    width: 70%;
-    }
-
     @media (${({ theme }) => theme.breakPoints.desktop}){
-    width: 50%;
     min-height: 40vh;
-    }
-
-    @media (${({ theme }) => theme.breakPoints.bigDesktop}){
-    width: 30%;
     }
 `;
 
-const StyledSpan = styled.span`
+const StyledDiv = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -69,15 +76,25 @@ const StyledSpan = styled.span`
 `;
 
 const StyledLabel = styled.label`
-    width: 80%;
+    width: 100%;
+    display: flex;
+    align-items: center;
     padding: 0;
-    margin: 0;
+    margin: 10px 0;
     color: ${({ theme }) => theme.colors.third};
+
+    @media (${({ theme }) => theme.breakPoints.desktop}){
+        width: 60%;
+    }
 
 `;
 
+const StyledIcon = styled.img`
+    margin-right: 5vw;
+`;
+
 const styles = css`
-    width: 80%;
+    width: 100%;
     font-size: ${({ theme }) => theme.fontSizes.mobile.m};
     background-color: transparent;
     border: 1px solid ${({ theme }) => theme.colors.white};
@@ -88,6 +105,7 @@ const styles = css`
 
     @media (${({ theme }) => theme.breakPoints.desktop}){
         font-size: ${({ theme }) => theme.fontSizes.desktop.m};
+        width: 60%;
     }
 
 `;
@@ -106,4 +124,4 @@ const StyledSelect = styled.select`
     ${styles}
 `;
 
-export { StyledTitlePage, StyledLogo, StyledH1, StyledInput, StyledOption, StyledSelect, StyledWelcomeDiv, StyledLabel, StyledForm, StyledSpan }
+export { StyledTitlePage, StyledLogo, StyledH1, StyledInput, StyledOption, StyledSelect, StyledWelcomeDiv, StyledLabel, StyledForm, StyledDiv, StyledWrapper, StyledIcon }
