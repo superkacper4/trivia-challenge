@@ -1,9 +1,5 @@
 import styled from 'styled-components'
 
-interface types {
-    isCorrect: boolean;
-}
-
 const StyledQuestionOverview = styled.div<{ isCorrect: boolean }>`
     width: 100%;
     height: 65px;

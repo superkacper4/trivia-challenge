@@ -17,6 +17,9 @@ const StyledLoader = styled.div`
     justify-content: center;
     align-items: center;
     
+    @media (${({ theme }) => theme.breakPoints.desktop}){
+        padding: 20vw;
+    }
 `;
 
 export { StyledLoader }

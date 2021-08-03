@@ -1,5 +1,18 @@
 import styled from 'styled-components'
 
+// switch (expr) {
+//     case 'Oranges':
+//       console.log('Oranges are $0.59 a pound.');
+//       break;
+//     case 'Mangoes':
+//     case 'Papayas':
+//       console.log('Mangoes and papayas are $2.79 a pound.');
+//       // expected output: "Mangoes and papayas are $2.79 a pound."
+//       break;
+//     default:
+//       console.log(`Sorry, we are out of ${expr}.`);
+//   }
+
 const Button = styled.button`
     width: 100%;
     color: ${({ theme }) => theme.colors.white};
@@ -17,6 +30,10 @@ const Button = styled.button`
         width: 60%;
         font-size: ${({ theme }) => theme.fontSizes.desktop.button};
         cursor: pointer;
+        transition: background-image .5s;
+        &:hover{
+            background-image: linear-gradient(to right, ${({ theme }) => theme.colors.third}, ${({ theme }) => theme.colors.third});
+        }
     }
 `;
 

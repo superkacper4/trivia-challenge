@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
-import { useHistory } from "react-router-dom";
+import { useHistory, Redirect } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux'
+import { paths } from '../../Router/routes'
 import { setAnswers } from '../../redux/quizSlice';
 import { RootState } from '../../redux/store'
 import { StyledQuizPage, StyledLevel, StyledQuestion, StyledDiv, StyledWrapper } from './QuizPage.css';
@@ -20,7 +21,7 @@ const QuizPage = () => {
         setNumberQuestion(numberQuestion + 1)
 
         if (numberQuestion + 1 >= Number(amount)) {
-            history.push('/results')
+            history.push(paths.RESULTS)
             dispatch(setAnswers(answersLocal))
         }
     }
@@ -28,6 +29,7 @@ const QuizPage = () => {
 
     return (
         <StyledQuizPage>
+            {isError ? <Redirect to={paths.ERROR} /> : null}
             <Loader isLoading={isLoading} />
             <StyledWrapper>
                 <StyledDiv>

@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from 'react'
 import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux'
+import { paths } from '../../Router/routes'
 import { setQuestions, setError, setLoading } from '../../redux/questionsSlice'
 import { setAmount } from '../../redux/titleSlice';
 import { RootState } from '../../redux/store'
 import { StyledResultsPage, StyledStarsDiv, StyledWrapper, StyledScore, StyledAvatar, StyledStar } from './ResultsPage.css'
-import { QuestionOverview, Button, Loader, QuestionCounter } from '../../components';
+import { QuestionOverview, Button, QuestionCounter } from '../../components';
 import star1Img from '../../assets/Star1.svg'
 import star0Img from '../../assets/Star0.svg'
 import avatarImg from '../../assets/avatar.svg'
 
 const ResultsPage = () => {
     const [score, setScore] = useState<number>(0)
-    const [isLoadingLocal, setLoadingLocal] = useState(true)
     const { questions } = useSelector((state: RootState) => state.questions);
     const { answers } = useSelector((state: RootState) => state.quiz);
     const dispatch = useDispatch();
@@ -21,35 +21,25 @@ const ResultsPage = () => {
     const countScore = () => {
         questions?.forEach((question, i) => {
             if (question.correct_answer === answers[i]) {
-                console.log("hihi")
-
                 setScore(prevState => prevState + 1)
             }
         })
     }
 
     const handlePlayAgain = () => {
-        history.push('/')
+        history.push(paths.TITLE)
         dispatch(setQuestions([]))
         dispatch(setLoading(false))
         dispatch(setError(false))
         dispatch(setAmount('0'))
     }
 
-    const handleLoader = () => {
-        setTimeout(() => {
-            setLoadingLocal(false)
-        }, 1000)
-    }
-
     useEffect(() => {
         countScore()
-        handleLoader()
     }, [])
 
     return (
         <StyledResultsPage>
-            <Loader isLoading={isLoadingLocal} />
             <StyledWrapper>
                 <StyledScore>
                     <StyledAvatar src={avatarImg} alt='avatar' /> You scored:  <QuestionCounter currentQuestion={score} amount={answers?.length + 1} score />
@@ -57,14 +47,14 @@ const ResultsPage = () => {
                 <StyledStarsDiv>
                     {questions?.map((question, i) => {
                         if (question.correct_answer === answers[i]) {
-                            return <StyledStar src={star1Img} alt='o' />
+                            return <StyledStar src={star1Img} alt='o' key={question.question} />
                         }
                         return null
                     })}
 
                     {questions?.map((question, i) => {
                         if (question.correct_answer !== answers[i]) {
-                            return <StyledStar src={star0Img} alt='x' />
+                            return <StyledStar src={star0Img} alt='x' key={question.question} />
                         }
                         return null
                     })}

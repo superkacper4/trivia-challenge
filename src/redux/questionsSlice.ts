@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 /* eslint-disable camelcase */
 
-export interface CounterState {
+export interface questionsState {
     category: string;
     type: boolean;
     difficulty: string;
@@ -12,7 +12,7 @@ export interface CounterState {
 }
 
 interface questionInterface {
-    questions: CounterState[];
+    questions: questionsState[];
     isLoading: boolean;
     isError: boolean;
 }
@@ -25,7 +25,7 @@ const initialState: questionInterface = {
 }
 
 export const counterSlice = createSlice({
-    name: 'counter',
+    name: 'questions',
     initialState,
     reducers: {
         setQuestions: (state, action) => {

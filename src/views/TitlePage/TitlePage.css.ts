@@ -82,7 +82,7 @@ const StyledLabel = styled.label`
 `;
 
 const StyledIcon = styled.img`
-    margin-right: 5vw;
+    margin-right: 10px;
 `;
 
 const styles = css`
