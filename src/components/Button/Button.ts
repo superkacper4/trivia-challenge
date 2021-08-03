@@ -30,7 +30,6 @@ const Button = styled.button`
         width: 60%;
         font-size: ${({ theme }) => theme.fontSizes.desktop.button};
         cursor: pointer;
-        transition: background-image .5s;
         &:hover{
             background-image: linear-gradient(to right, ${({ theme }) => theme.colors.third}, ${({ theme }) => theme.colors.third});
         }

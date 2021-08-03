@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 const StyledQuizPage = styled.section`
+    min-height: 100vh;
     background-color: ${({ theme }) => theme.colors.white};
     display: flex;
     justify-content: center;
@@ -8,12 +9,12 @@ const StyledQuizPage = styled.section`
 
 const StyledWrapper = styled.div`
     width: 80%;
-    min-height: 100vh;
     color: ${({ theme }) => theme.colors.main};
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    z-index: 3;
 
     @media (${({ theme }) => theme.breakPoints.desktop}){
         width: 60%;

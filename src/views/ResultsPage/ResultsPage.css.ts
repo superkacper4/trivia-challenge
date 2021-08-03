@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 const StyledResultsPage = styled.section`
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,11 +16,12 @@ const StyledResultsPage = styled.section`
 
 const StyledWrapper = styled.div`
     width: 80%;
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    z-index: 3;
+
 
     @media (${({ theme }) => theme.breakPoints.desktop}){
         width: 60%;

@@ -14,6 +14,8 @@ const StyledWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    z-index: 3;
+
 
     @media (${({ theme }) => theme.breakPoints.tablet}){
     width: 70%;
@@ -100,6 +102,9 @@ const styles = css`
         width: 60%;
         cursor: pointer;
 
+        &:hover{
+            background-color: #676eb8;
+        }
     }
 
 `;

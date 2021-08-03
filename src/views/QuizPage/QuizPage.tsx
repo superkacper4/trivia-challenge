@@ -5,7 +5,7 @@ import { paths } from '../../Router/routes'
 import { setAnswers } from '../../redux/quizSlice';
 import { RootState } from '../../redux/store'
 import { StyledQuizPage, StyledLevel, StyledQuestion, StyledDiv, StyledWrapper } from './QuizPage.css';
-import { Button, H2, ProgressBar, Loader } from '../../components';
+import { Button, H2, ProgressBar, Loader, Background } from '../../components';
 
 const QuizPage = () => {
     const [numberQuestion, setNumberQuestion] = useState(0)
@@ -29,6 +29,8 @@ const QuizPage = () => {
 
     return (
         <StyledQuizPage>
+            <Background white />
+
             {isError ? <Redirect to={paths.ERROR} /> : null}
             <Loader isLoading={isLoading} />
             <StyledWrapper>

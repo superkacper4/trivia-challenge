@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import { api } from '../../Router/routes'
 import { setQuestions, setError, setLoading } from '../../redux/questionsSlice'
 import { setAmount } from '../../redux/titleSlice';
-import { Button, Logo } from '../../components';
+import { Button, Logo, Background } from '../../components';
 import { StyledTitlePage, StyledH1, StyledInput, StyledOption, StyledSelect, StyledWelcomeDiv, StyledLabel, StyledForm, StyledDiv, StyledWrapper, StyledIcon } from './TitlePage.css';
 import cupImg from '../../assets/cup.svg'
 import starImg from '../../assets/star.svg'
@@ -48,6 +48,7 @@ const TitlePage = () => {
 
     return (
         <StyledTitlePage>
+            <Background white={false} />
             <StyledWrapper>
                 <StyledWelcomeDiv>
                     <StyledH1>Welcome to the</StyledH1>
