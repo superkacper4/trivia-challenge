@@ -20,18 +20,24 @@ const Button = styled.button<{
                 background-color: ${theme.colors.white};
                 border: 4px solid ${theme.colors.main};
                 color: ${theme.colors.main};
+
+                @media (${theme.breakPoints.desktop}){
                     &:hover{
                         background-color: lightgray;
                     }
+                }
                 `;
 
             case 'blue':
                 return css`
                 color: ${theme.colors.white};
                 background-color: ${theme.colors.main};
+
+                @media (${theme.breakPoints.desktop}){
                     &:hover{
                         background-color: ${theme.colors.nineth};
                     }
+                }
                 `;
 
             default:
@@ -39,9 +45,12 @@ const Button = styled.button<{
                 background-image: linear-gradient(to right, ${theme.colors.third}, ${theme.colors.fourth});
                 box-shadow: 0px 5px 0px 0px ${theme.colors.sixth};
                 color: ${theme.colors.white};
+
+                @media (${theme.breakPoints.desktop}){
                     &:hover{
                     background-image: linear-gradient(to right, ${theme.colors.third}, ${theme.colors.third});
                     }
+                }
             `;
         }
     }}

@@ -33,7 +33,7 @@ const TitlePage = () => {
             });
     }
 
-    const handleSelect = (e: any): void => {
+    const handleSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
         setDifficultyLocal(e.target.value)
     }
 
