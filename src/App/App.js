@@ -1,7 +1,7 @@
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
 import { Helmet } from "react-helmet";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import { theme, GlobalStyle } from '../style';
 import RouterComponent from '../Router';
 
@@ -12,10 +12,10 @@ const App = () => (
       <title>TRIVIA Challenge</title>
       <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet" />
     </Helmet>
-    <BrowserRouter>
+    <HashRouter>
       <RouterComponent />
       <GlobalStyle />
-    </BrowserRouter>
+    </HashRouter>
   </ThemeProvider>
 );
 
