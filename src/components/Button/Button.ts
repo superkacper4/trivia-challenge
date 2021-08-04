@@ -1,38 +1,56 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
-// switch (expr) {
-//     case 'Oranges':
-//       console.log('Oranges are $0.59 a pound.');
-//       break;
-//     case 'Mangoes':
-//     case 'Papayas':
-//       console.log('Mangoes and papayas are $2.79 a pound.');
-//       // expected output: "Mangoes and papayas are $2.79 a pound."
-//       break;
-//     default:
-//       console.log(`Sorry, we are out of ${expr}.`);
-//   }
 
-const Button = styled.button`
+
+const Button = styled.button<{
+    option?: string;
+}>`
     width: 100%;
-    color: ${({ theme }) => theme.colors.white};
     text-transform: uppercase;
-    background-image: linear-gradient(to right, ${({ theme }) => theme.colors.third}, ${({ theme }) => theme.colors.fourth});
     font-size: ${({ theme }) => theme.fontSizes.mobile.button};
     padding: 3vh;
     margin-bottom: 2vh;
     border-radius: 14px;
-    box-shadow: 0px 5px 0px 0px ${({ theme }) => theme.colors.sixth};
     border: none;
 
+    ${({ theme, option }) => {
+        switch (option) {
+            case 'white':
+                return css`
+                background-color: ${theme.colors.white};
+                border: 4px solid ${theme.colors.main};
+                color: ${theme.colors.main};
+                    &:hover{
+                        background-color: lightgray;
+                    }
+                `;
+
+            case 'blue':
+                return css`
+                color: ${theme.colors.white};
+                background-color: ${theme.colors.main};
+                    &:hover{
+                        background-color: ${theme.colors.nineth};
+                    }
+                `;
+
+            default:
+                return css`
+                background-image: linear-gradient(to right, ${theme.colors.third}, ${theme.colors.fourth});
+                box-shadow: 0px 5px 0px 0px ${theme.colors.sixth};
+                color: ${theme.colors.white};
+                    &:hover{
+                    background-image: linear-gradient(to right, ${theme.colors.third}, ${theme.colors.third});
+                    }
+            `;
+        }
+    }}
 
     @media (${({ theme }) => theme.breakPoints.desktop}){
         width: 60%;
         font-size: ${({ theme }) => theme.fontSizes.desktop.button};
         cursor: pointer;
-        &:hover{
-            background-image: linear-gradient(to right, ${({ theme }) => theme.colors.third}, ${({ theme }) => theme.colors.third});
-        }
+
     }
 `;
 

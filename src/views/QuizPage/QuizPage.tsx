@@ -44,8 +44,8 @@ const QuizPage = () => {
                 <StyledQuestion dangerouslySetInnerHTML={createMarkup()} />
 
                 <StyledDiv>
-                    <Button type='button' value='True' onClick={(e) => handleClick(e)}> True </Button>
-                    <Button type='button' value='False' onClick={(e) => handleClick(e)}> False </Button>
+                    <Button type='button' value='True' onClick={(e) => handleClick(e)} option='blue'> True </Button>
+                    <Button type='button' value='False' onClick={(e) => handleClick(e)} option='white'> False </Button>
                 </StyledDiv>
             </StyledWrapper>
         </StyledQuizPage>

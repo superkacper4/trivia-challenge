@@ -103,7 +103,7 @@ const styles = css`
         cursor: pointer;
 
         &:hover{
-            background-color: #676eb8;
+            background-color: ${({ theme }) => theme.colors.nineth};
         }
     }
 

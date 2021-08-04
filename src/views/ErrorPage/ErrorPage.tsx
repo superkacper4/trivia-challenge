@@ -13,7 +13,7 @@ const ErrorPage = () => {
     return (
         <StyledErrorPage>
             Something gone wrong.
-            <Button onClick={handleClick}>Try Again!</Button>
+            <Button onClick={handleClick} >Try Again!</Button>
         </StyledErrorPage>
     )
 }

@@ -72,7 +72,7 @@ const TitlePage = () => {
                     <Button type='submit'>next</Button>
                 </StyledForm>
             </StyledWrapper>
-        </StyledTitlePage>
+        </StyledTitlePage >
     )
 }
 

@@ -66,7 +66,7 @@ const ResultsPage = () => {
                     return (<QuestionOverview isCorrect={isCorrect} question={question.question} key={question.question} />)
                 })}
 
-                <Button type="button" onClick={handlePlayAgain} >play again</Button>
+                <Button type="button" onClick={handlePlayAgain}>play again</Button>
             </StyledWrapper>
         </StyledResultsPage>
     )
