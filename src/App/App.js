@@ -9,7 +9,7 @@ const App = () => (
   <ThemeProvider theme={theme}>
     <Helmet>
       <meta charSet="utf-8" />
-      <title>My Title</title>
+      <title>TRIVIA Challenge</title>
       <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet" />
     </Helmet>
     <BrowserRouter>
