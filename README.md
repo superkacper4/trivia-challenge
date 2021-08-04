@@ -1,5 +1,5 @@
-# Project Name
-Trivia Challenge
+# Trivia Challenge 
+
 
 ## General info
 Quiz game made in recruitment process.
