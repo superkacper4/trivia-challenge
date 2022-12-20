@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`QuestionCoutner should match the snapshot 1`] = `
+<DocumentFragment>
+  <p
+    class="sc-bdnxRM kEYANI"
+  >
+    <span
+      class="sc-gtsrHT fqcFIy"
+      data-testid="question-counter-span"
+    >
+      02
+    </span>
+    /10
+  </p>
+</DocumentFragment>
+`;
